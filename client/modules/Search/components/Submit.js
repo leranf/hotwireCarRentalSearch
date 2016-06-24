@@ -5,14 +5,14 @@ import { searchForCars } from '../SearchActions';
 const mapStateToProps = state => ({
   location: state.search.location,
   date: state.search.date,
-  time: state.search.time
+  time: state.search.time,
 });
 
 const mapDispatchToProps = dispatch => ({
-  submitForm: (location, date, time) => dispatch(searchForCars(location, date, time))
+  submitForm: (location, date, time) => dispatch(searchForCars(location, date, time)),
 });
 
-const Submit = ({location, date, time, submitForm}) => (
+const Submit = ({ location, date, time, submitForm }) => (
   <div className="container">
     <button onClick={() => submitForm(location, date, time)}>Send</button>
   </div>

@@ -14,6 +14,11 @@ const ResultsListItem = ({ SubTotal, TaxesAndFees, TotalPrice, MileageDescriptio
   </div>
 );
 
-ResultsListItem.propTypes = {};
+ResultsListItem.propTypes = {
+  SubTotal: React.PropTypes.string.isRequired,
+  TaxesAndFees: React.PropTypes.string.isRequired,
+  TotalPrice: React.PropTypes.string.isRequired,
+  MileageDescription: React.PropTypes.string.isRequired,
+};
 
 export default connect(mapStateToProps, null)(ResultsListItem);

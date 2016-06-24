@@ -1,8 +1,8 @@
 export const setCarResults = results => ({
   type: 'SET_CAR_RESULTS',
-  payload: results
+  payload: results,
 });
 
 export const getCarResults = () => ({
-  type: 'GET_CAR_RESULTS'
+  type: 'GET_CAR_RESULTS',
 });

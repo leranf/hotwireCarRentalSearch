@@ -4,7 +4,7 @@ import Geosuggest from 'react-geosuggest';
 import Calendar from 'react-input-calendar';
 import TimeSelect from 'react-time-select';
 import 'moment-range';
-import {setPickUpLocation, setPickUpDate, setDropOffDate, setPickUpTime, setDropOffTime} from '../SearchActions';
+import { setPickUpLocation, setPickUpDate, setDropOffDate, setPickUpTime, setDropOffTime } from '../SearchActions';
 
 const mapDispatchToProps = dispatch => ({
   changePickUpLocation: location => dispatch(setPickUpLocation(location)),
@@ -25,12 +25,12 @@ const Form = ({ changePickUpLocation, changePickUpDate, changeDropOffDate, chang
     </table>
     <tr>Pick up date</tr>
     <tr>
-      <td><Calendar format="MM/DD/YYYY" computableFormat="MM/DD/YYYY" onChange={e => changePickUpDate(e)}/></td>
-      <td><TimeSelect onChange={e => changePickUpTime(e.toTimeString().slice(0, 5))}/></td>
+      <td><Calendar format="MM/DD/YYYY" computableFormat="MM/DD/YYYY" onChange={e => changePickUpDate(e)} /></td>
+      <td><TimeSelect onChange={e => changePickUpTime(e.toTimeString().slice(0, 5))} /></td>
     </tr>
     <tr>
-      <td><Calendar format="MM/DD/YYYY" computableFormat="MM/DD/YYYY" onChange={e => changeDropOffDate(e)}/></td>
-      <td><TimeSelect onChange={e => changeDropOffTime(e.toTimeString().slice(0, 5))}/></td>
+      <td><Calendar format="MM/DD/YYYY" computableFormat="MM/DD/YYYY" onChange={e => changeDropOffDate(e)} /></td>
+      <td><TimeSelect onChange={e => changeDropOffTime(e.toTimeString().slice(0, 5))} /></td>
     </tr>
   </div>
 );

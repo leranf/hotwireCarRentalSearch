@@ -8,7 +8,7 @@ const SearchReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_PICK_UP_LOCATION':
       return Object.assign({}, state, {
-        location: action.payload
+        location: action.payload,
       });
     case 'SET_PICK_UP_DATE':
       return Object.assign({}, state, {
@@ -29,6 +29,6 @@ const SearchReducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default SearchReducer;

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Form from '../components/Form';
 import Submit from '../components/Submit';
-import ResultsList from '../../Results/components/ResultsList'
+import ResultsList from '../../Results/components/ResultsList';
 
 const mapStateToProps = state => ({
   carResults: state.results.carResults,

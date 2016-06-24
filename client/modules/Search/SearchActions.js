@@ -26,7 +26,7 @@ export const setDropOffTime = dropOffTime => ({
   payload: dropOffTime,
 });
 
-export const searchForCars = (location, date, time) => 
+export const searchForCars = (location, date, time) =>
   dispatch => {
     dispatch(getCarResults());
     return callApi('searchHotwire', 'POST', {
