@@ -6,16 +6,11 @@ export function carSearch(req, res) {
     uri: 'http://api.hotwire.com/v1/search/car',
     qs: {
       apikey: 'pt9hmnp4ngx64vaqtck2hxn3', // -> uri + '?apikey=xxxxx'
-      // dest: req.body.location,
-      // startdate: req.body.startDate,
-      // enddate: req.body.endDate,
-      // pickuptime: req.body.pickUpTime,
-      // dropofftime: req.body.dropOffTime,
-      dest: 'LAX',
-      startdate: '06/28/2016',
-      enddate: '06/29/2016',
-      pickuptime: '06:00',
-      dropofftime: '06:00',
+      dest: req.body.location,
+      startdate: req.body.startDate,
+      enddate: req.body.endDate,
+      pickuptime: req.body.pickUpTime,
+      dropofftime: req.body.dropOffTime,
     },
   };
   return rp(options)
