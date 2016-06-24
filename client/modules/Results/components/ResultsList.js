@@ -6,12 +6,13 @@ const mapStateToProps = state => ({
   carResults: state.results.carResults,
 });
 
-const ResultsList = ({carResults}) => (
+const ResultsList = ({ carResults }) => (
   <div>
-    {carResults.map(carResult => {
-      console.log('carResult', carResult);
-      return <ResultsListItem key={carResult.id} {...carResult}/>
-    })}
+    <table>
+      {carResults.map(carResult =>
+        <tr><ResultsListItem key={carResult.ResultId} {...carResult} /></tr>
+      )}
+    </table>
   </div>
 );
 
