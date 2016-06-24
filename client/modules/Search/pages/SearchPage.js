@@ -1,14 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Form from '../components/Form';
 import Submit from '../components/Submit';
 import ResultsList from '../../Results/components/ResultsList'
 
-const SearchPage = () => (
+const mapStateToProps = state => ({
+  carResults: state.results.carResults,
+});
+
+const SearchPage = ({ carResults }) => (
   <div className="rentalCarSearchForm">
     <Form />
     <Submit />
-    <ResultsList />
+    {carResults ? <ResultsList /> : null}
   </div>
 );
 
-export default SearchPage;
+SearchPage.propTypes = {
+  carResults: React.PropTypes.array.isRequired,
+};
+
+export default connect(mapStateToProps, null)(SearchPage);
