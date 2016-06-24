@@ -18,7 +18,6 @@ export function carSearch(req, res) {
         dropofftime: '06:00'
     }
   };
-
   return rp(options)
     .then(results => {
       const jsonStringResults = parser.toJson(results);
@@ -30,5 +29,4 @@ export function carSearch(req, res) {
     .catch(err => {
       console.error('API call failed...', err); 
     });
-  
-};
+}
