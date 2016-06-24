@@ -1,7 +1,7 @@
 const initialState = {
   location: null,
   date: { pickUp: null, dropOff: null },
-  time: { pickUp: null, dropOff: null },
+  time: { pickUp: '12:00', dropOff: '12:00' },
 };
 
 const SearchReducer = (state = initialState, action) => {
