@@ -5,18 +5,15 @@ const mapStateToProps = state => ({
   carTypes: state.results.carTypes,
 });
 
-const ResultsListItem = ({carResult, carTypes}) => (
+const ResultsListItem = ({ SubTotal, TaxesAndFees, TotalPrice, MileageDescription }) => (
   <div>
-    
+    <td>Mileage: {MileageDescription}</td>
+    <td>SubTotal: {SubTotal}</td>
+    <td>Taxes: {TaxesAndFees}</td>
+    <td>Total: {TotalPrice}</td>
   </div>
 );
 
-ResultsListItem.propTypes = {
-  carResult: React.PropTypes.object.isRequired,
-  carTypes: React.PropTypes.array.isRequired,
-};
+ResultsListItem.propTypes = {};
 
 export default connect(mapStateToProps, null)(ResultsListItem);
-
-
-export default ResultsListItem;
