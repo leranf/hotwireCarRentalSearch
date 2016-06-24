@@ -12,19 +12,19 @@ const SearchReducer = (state = initialState, action) => {
       });
     case 'SET_PICK_UP_DATE':
       return Object.assign({}, state, {
-        date: Object.assign({}, state.date, { pickUp: action.payload })
+        date: Object.assign({}, state.date, { pickUp: action.payload }),
       });
     case 'SET_DROP_OFF_DATE':
       return Object.assign({}, state, {
-        date: Object.assign({}, state.date, { dropOff: action.payload })
+        date: Object.assign({}, state.date, { dropOff: action.payload }),
       });
     case 'SET_PICK_UP_TIME':
       return Object.assign({}, state, {
-        time: Object.assign({}, state.time, { pickUp: action.payload })
+        time: Object.assign({}, state.time, { pickUp: action.payload }),
       });
     case 'SET_DROP_OFF_TIME':
       return Object.assign({}, state, {
-        time: Object.assign({}, state.time, { dropOff: action.payload })
+        time: Object.assign({}, state.time, { dropOff: action.payload }),
       });
     default:
       return state;
