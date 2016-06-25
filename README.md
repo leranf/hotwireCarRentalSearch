@@ -71,8 +71,6 @@ Modules are the way of organising different domain-specific modules in the proje
 ```
 ### App Breakdown
 
-There are two modules in this application, Search and Results.
-
 #### Search
 The main component of the search module is the Form, which allows the user to input the location they'd like to pick the car up from, as well as the date and time paramaters for pick-up and drop-off. Its purpose is to collect the data needed to make a request to the Hotwire API.
 
