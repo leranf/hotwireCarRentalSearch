@@ -20,11 +20,11 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const Form = ({ changePickUpLocation, changePickUpDate, changeDropOffDate, changePickUpTime, changeDropOffTime }) => (
-  <div className="container" style={{ float: 'left'}}>
+  <div className="container" style={{ float: 'left' }}>
     <table style={{ border: '1px solid' }}>
       <tr>Location</tr>
       <tr>
-        <div style={{ 'padding-top': '10px'}}>
+        <div style={{ 'padding-top': '10px' }}>
           <Geosuggest placeholder="Enter address" onSuggestSelect={suggest => changePickUpLocation(suggest.label)} />
         </div>
       </tr>
@@ -39,7 +39,7 @@ const Form = ({ changePickUpLocation, changePickUpDate, changeDropOffDate, chang
         <td><TimeSelect label="" value={initialTime} onChange={e => changeDropOffTime(e.toTimeString().slice(0, 5))} /></td>
       </tr>
       <tr>
-        <div style={{ 'margin-left': '65px', 'padding-top': '10px', }}>
+        <div style={{ 'margin-left': '65px', 'padding-top': '10px' }}>
           <Submit />
         </div>
       </tr>

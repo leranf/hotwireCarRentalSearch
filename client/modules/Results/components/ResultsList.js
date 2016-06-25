@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
 });
 
 const ResultsList = ({ carResults }) => (
-  <div style={{ float: 'right'}}>
+  <div style={{ float: 'right' }}>
     {carResults.map(carResult =>
       <ResultsListItem key={carResult.ResultId} {...carResult} />
     )}

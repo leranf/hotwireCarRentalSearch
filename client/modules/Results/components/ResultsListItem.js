@@ -28,6 +28,7 @@ const ResultsListItem = ({ carTypes, CarTypeCode, DailyRate, TotalPrice, Mileage
 ResultsListItem.propTypes = {
   carTypes: React.PropTypes.object.isRequired,
   CarTypeCode: React.PropTypes.string.isRequired,
+  DailyRate: React.PropTypes.string.isRequired,
   TaxesAndFees: React.PropTypes.string.isRequired,
   TotalPrice: React.PropTypes.string.isRequired,
   MileageDescription: React.PropTypes.string.isRequired,
