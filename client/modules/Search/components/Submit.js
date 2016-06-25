@@ -14,7 +14,7 @@ const mapDispatchToProps = dispatch => ({
 
 const Submit = ({ location, date, time, submitForm }) => (
   <div className="container">
-    <button onClick={() => submitForm(location, date, time)}>Send</button>
+    <button style={{ 'font-size': '30px', 'background-color': 'red', color: 'white' }} onClick={() => submitForm(location, date, time)}>Find a car</button>
   </div>
 );
 
