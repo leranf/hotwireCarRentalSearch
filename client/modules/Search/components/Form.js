@@ -4,7 +4,7 @@ import Geosuggest from 'react-geosuggest';
 import Calendar from 'react-input-calendar';
 import TimeSelect from 'react-time-select';
 import Submit from './Submit';
-import 'moment-range';
+// import 'moment-range';
 import { setPickUpLocation, setPickUpDate, setDropOffDate, setPickUpTime, setDropOffTime } from '../SearchActions';
 // import styles from './Form.css';
 
