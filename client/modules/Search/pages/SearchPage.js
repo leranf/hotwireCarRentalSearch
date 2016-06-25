@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Form from '../components/Form';
-import Submit from '../components/Submit';
 import ResultsList from '../../Results/components/ResultsList';
 
 const mapStateToProps = state => ({
@@ -9,9 +8,8 @@ const mapStateToProps = state => ({
 });
 
 const SearchPage = ({ carResults }) => (
-  <div className="rentalCarSearchForm">
+  <div>
     <Form />
-    <Submit />
     {carResults ? <ResultsList /> : null}
   </div>
 );
