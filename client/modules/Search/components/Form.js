@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Geosuggest from 'react-geosuggest';
 import Calendar from 'react-input-calendar';
 import TimeSelect from 'react-time-select';
+import Submit from './Submit';
 import 'moment-range';
 import { setPickUpLocation, setPickUpDate, setDropOffDate, setPickUpTime, setDropOffTime } from '../SearchActions';
 
@@ -19,22 +20,28 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const Form = ({ changePickUpLocation, changePickUpDate, changeDropOffDate, changePickUpTime, changeDropOffTime }) => (
-  <div className="container">
-    <h3>Search Hotwire Cars!!</h3>
-    <table>
+  <div className="container" style={{ float: 'left'}}>
+    <table style={{ border: '1px solid' }}>
       <tr>Location</tr>
       <tr>
-        <Geosuggest placeholder="Enter address" onSuggestSelect={suggest => changePickUpLocation(suggest.label)} />
+        <div style={{ 'padding-top': '10px'}}>
+          <Geosuggest placeholder="Enter address" onSuggestSelect={suggest => changePickUpLocation(suggest.label)} />
+        </div>
       </tr>
       <tr>Pick up date</tr>
       <tr>
-        <td><Calendar placeholder="Select Date" format="MM/DD/YYYY" computableFormat="MM/DD/YYYY" onChange={e => changePickUpDate(e)} /></td>
+        <td style={{ 'padding-top': '10px', 'padding-bottom': '10px', 'padding-right': '20px' }}><Calendar placeholder="Select Date" format="MM/DD/YYYY" computableFormat="MM/DD/YYYY" onChange={e => changePickUpDate(e)} /></td>
         <td><TimeSelect label="" value={initialTime} onChange={e => changePickUpTime(e.toTimeString().slice(0, 5))} /></td>
       </tr>
       <tr>Drop off date</tr>
       <tr>
-        <td><Calendar placeholder="Select Date" format="MM/DD/YYYY" computableFormat="MM/DD/YYYY" onChange={e => changeDropOffDate(e)} /></td>
+        <td style={{ 'padding-top': '10px', 'padding-bottom': '10px' }}><Calendar placeholder="Select Date" format="MM/DD/YYYY" computableFormat="MM/DD/YYYY" onChange={e => changeDropOffDate(e)} /></td>
         <td><TimeSelect label="" value={initialTime} onChange={e => changeDropOffTime(e.toTimeString().slice(0, 5))} /></td>
+      </tr>
+      <tr>
+        <div style={{ 'margin-left': '65px', 'padding-top': '10px', }}>
+          <Submit />
+        </div>
       </tr>
     </table>
   </div>
