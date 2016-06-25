@@ -11,10 +11,14 @@ const ResultsReducer = (state = initialState, action) => {
         isfetching: true,
       });
     case 'SET_CAR_RESULTS':
+      const carTypesObj = {};
+      action.payload.carTypes.forEach(type => {
+        carTypesObj[type.CarTypeCode] = type;
+      });
       return Object.assign({}, state, {
         isfetching: false,
         carResults: action.payload.carResults,
-        carTypes: action.payload.carTypes,
+        carTypes: carTypesObj,
       });
     default:
       return state;
