@@ -82,10 +82,10 @@ React/Redux is a very convenient combination of technology to use in this case b
 Results has two components, the ResultsList, and a ResultsListItem. The ResultsList is a simple component that receives an array of the results returned from the API request, and maps those results to a set of ResultsListItems.
 Each ResultsListItem is passed its specific property values, and formatted cleanly for the user to see.
 
-Again React/Redux help make the code very clean, modular, and easy to understand. Redux allows me to feed the results from the API request straight to the ResultsList component, and React/JSX syntax allows me to create a ResultsListItem component for each result. Within the ResultsListItem, I also pass in the carTypes object from the redux store, to extract more specific information about the particular car result.
+Again React/Redux helps make the code very clean, modular, and easy to understand. Redux allows me to feed the results from the API request straight to the ResultsList component, and React/JSX syntax allows me to create a ResultsListItem component for each result. I also pass in the carTypes object from the redux store to the ResultsListItem component in order to extract more specific information about the particular car result.
 
 #### API Request to Hotwire
-The API request is handled on the server side to avoid making cross-origin requests. The SearchAction 'searchForCars' sends a POST request to my RESTful API, passing the parameters of the query to Hotwire through the request body. Once my server recieves a response from the Hotwire API, it sends back the data as a JSON object, or if it fails, sends back a 400 error that gets handled on the client side, initiating the user to modify their search criteria.
+The API request is handled on the server side to avoid making cross-origin requests. The SearchAction 'searchForCars' sends a POST request to my RESTful API, passing the parameters of the query to Hotwire through the request body. Once my server recieves a response from the Hotwire API, it sends back the data as a JSON object, or if it fails, sends back a 400 error. Back on the client side, results data is either rendered to the page or the user is initiated to modify their search criteria.
 
 ## Misc
 
