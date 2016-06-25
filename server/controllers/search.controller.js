@@ -11,6 +11,11 @@ export function carSearch(req, res) {
       enddate: req.body.endDate,
       pickuptime: req.body.pickUpTime,
       dropofftime: req.body.dropOffTime,
+      // dest: 'New York, NY, United States',
+      // startdate: '06/29/2016',
+      // enddate: '06/30/2016',
+      // pickuptime: '12:00',
+      // dropofftime: '12:00',
     },
   };
   return rp(options)
