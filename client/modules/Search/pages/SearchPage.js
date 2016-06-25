@@ -4,18 +4,22 @@ import Form from '../components/Form';
 import ResultsList from '../../Results/components/ResultsList';
 
 const mapStateToProps = state => ({
+  isFetching: state.results.isFetching,
   carResults: state.results.carResults,
+  badRequest: state.results.badRequest,
 });
 
-const SearchPage = ({ carResults }) => (
+const SearchPage = ({ isFetching, carResults, badRequest }) => (
   <div>
     <Form />
-    {carResults ? <ResultsList /> : null}
+    {carResults || isFetching || badRequest ? <ResultsList /> : null}
   </div>
 );
 
 SearchPage.propTypes = {
+  isFetching: React.PropTypes.bool.isRequired,
   carResults: React.PropTypes.array.isRequired,
+  badRequest: React.PropTypes.bool.isRequired,
 };
 
 export default connect(mapStateToProps, null)(SearchPage);

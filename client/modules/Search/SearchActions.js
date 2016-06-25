@@ -1,5 +1,5 @@
 import callApi from '../../util/apiCaller';
-import { getCarResults, setCarResults } from '../Results/ResultsActions';
+import { getCarResults, setCarResults, errorGettingCarResults } from '../Results/ResultsActions';
 
 export const setPickUpLocation = pickUplocation => ({
   type: 'SET_PICK_UP_LOCATION',
@@ -40,6 +40,6 @@ export const searchForCars = (location, date, time) =>
       dispatch(setCarResults(res));
     })
     .catch(err => {
-      console.log('error', err);
+      dispatch(errorGettingCarResults());
     });
   };

@@ -6,6 +6,7 @@ import TimeSelect from 'react-time-select';
 import Submit from './Submit';
 import 'moment-range';
 import { setPickUpLocation, setPickUpDate, setDropOffDate, setPickUpTime, setDropOffTime } from '../SearchActions';
+// import styles from './Form.css';
 
 const initialTime = new Date();
 initialTime.setHours(12);
@@ -20,7 +21,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const Form = ({ changePickUpLocation, changePickUpDate, changeDropOffDate, changePickUpTime, changeDropOffTime }) => (
-  <div className="container" style={{ float: 'left' }}>
+  <div className="container" style={{ float: 'left', 'max-width': '300px' }}>
     <table style={{ border: '1px solid' }}>
       <tr>Location</tr>
       <tr>

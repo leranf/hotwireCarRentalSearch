@@ -1,5 +1,6 @@
 const initialState = {
-  isfetching: false,
+  isFetching: false,
+  badRequest: false,
   carResults: null,
   carTypes: null,
 };
@@ -8,7 +9,7 @@ const ResultsReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'GET_CAR_RESULTS':
       return Object.assign({}, state, {
-        isfetching: true,
+        isFetching: true,
       });
     case 'SET_CAR_RESULTS':
       let carTypesObj = {};
@@ -16,9 +17,15 @@ const ResultsReducer = (state = initialState, action) => {
         carTypesObj[type.CarTypeCode] = type;
       });
       return Object.assign({}, state, {
-        isfetching: false,
+        isFetching: false,
         carResults: action.payload.carResults,
         carTypes: carTypesObj,
+        badRequest: false,
+      });
+    case 'ERROR_GETTING_CAR_RESULTS':
+      return Object.assign({}, state, {
+        isFetching: false,
+        badRequest: true,
       });
     default:
       return state;
