@@ -72,11 +72,11 @@ Modules are the way of organising different domain-specific modules in the proje
 ### App Breakdown
 
 #### Search
-The main component of the search module is the Form, which allows the user to input the location they'd like to pick the car up from, as well as the date and time paramaters for pick-up and drop-off. Its purpose is to collect the data needed to make a request to the Hotwire API.
+The main component of the search module is the Form, which allows the user to input the location they'd like to pick the car up from, as well as the date and time parameters for pick-up and drop-off. Its purpose is to collect the data needed to make a request to the Hotwire API.
 
 For modularity, the submit button is its own component, and imported as a child of the Form component (thanks to React). Clicking the submit button sets off a chain of events that makes the API request, and then sets results property values within the redux store.
 
-React/Redux is a very convenient combination of technology to use in this case because any time there is a change within one of the input fields, I can simply dispatch an action to modify that property's value within the redux store. Those store (state) values are passed to the Submit component, and upon click, dispatches an action that makes the API request with the paramaters passed to the function. This helps create a very intuitive seperation of concerns between the components. 
+React/Redux is a very convenient combination of technology to use in this case because any time there is a change within one of the input fields, I can simply dispatch an action to modify that property's value within the redux store. Those store (state) values are passed to the Submit component, and upon click, dispatches an action that makes the API request with the parameters passed to the function. This helps create a very intuitive seperation of concerns between the components. 
 
 #### Results
 Results has two components, the ResultsList, and a ResultsListItem. The ResultsList is a simple component that receives an array of the results returned from the API request, and maps those results to a set of ResultsListItems.
@@ -85,7 +85,7 @@ Each ResultListItem is passed its specific property values, and formatted cleanl
 Again React/Redux help make the code very clean, modular, and easy to understand. Redux allows me to feed the results from the API request straight to the ResultsList component, and React/JSX syntax allows me to create a ResultListItem component for each result. Within the ResultListItem, I also pass in the carTypes object from the redux store, to extract more specific information about the particular car result.
 
 #### API Request to Hotwire
-The API request is handled on the server side to avoid making cross-origin requests. The SearchAction 'searchForCars' sends a POST request to my RESTful API, passing the paramaters of the query to Hotwire through the request body. Once my server recieves a response from the Hotwire API, it sends back the data as a JSON object, or if it fails, sends back a 400 error that gets handled on the client side, initiating the user to modify their search criteria.
+The API request is handled on the server side to avoid making cross-origin requests. The SearchAction 'searchForCars' sends a POST request to my RESTful API, passing the parameters of the query to Hotwire through the request body. Once my server recieves a response from the Hotwire API, it sends back the data as a JSON object, or if it fails, sends back a 400 error that gets handled on the client side, initiating the user to modify their search criteria.
 
 ## Misc
 
