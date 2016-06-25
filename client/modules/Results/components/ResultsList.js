@@ -7,12 +7,10 @@ const mapStateToProps = state => ({
 });
 
 const ResultsList = ({ carResults }) => (
-  <div>
-    <table>
-      {carResults.map(carResult =>
-        <tr><ResultsListItem key={carResult.ResultId} {...carResult} /></tr>
-      )}
-    </table>
+  <div style={{ float: 'right'}}>
+    {carResults.map(carResult =>
+      <ResultsListItem key={carResult.ResultId} {...carResult} />
+    )}
   </div>
 );
 
