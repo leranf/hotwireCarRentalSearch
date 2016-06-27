@@ -40,6 +40,10 @@ Again React/Redux helps make the code very clean, modular, and easy to understan
 #### API Request to Hotwire
 The API request is handled on the server side to avoid making cross-origin requests. The SearchAction 'searchForCars' sends a POST request to my RESTful API, passing the parameters of the query to Hotwire through the request body. Once my server recieves a response from the Hotwire API, it sends back the data as a JSON object, or if it fails, sends back a 400 error. Back on the client side, results data is either rendered to the page or the user is initiated to modify their search criteria.
 
+### Screen Shot
+
+![Alt text](./hotwireCarRentalSearchScreenShot.png?raw=true "Optional Title")
+
 ## Misc
 
 I ran into some complications due to the fact that I used a boilerplate to architect the skeleton of the application.
