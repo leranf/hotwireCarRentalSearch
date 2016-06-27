@@ -1,12 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Geosuggest from 'react-geosuggest';
-import Calendar from 'react-input-calendar';
 import TimeSelect from 'react-time-select';
 import Submit from './Submit';
-// import 'moment-range';
 import { setPickUpLocation, setPickUpDate, setDropOffDate, setPickUpTime, setDropOffTime } from '../SearchActions';
-// import styles from './Form.css';
+
 
 const initialTime = new Date();
 initialTime.setHours(12);
@@ -21,23 +18,29 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const Form = ({ changePickUpLocation, changePickUpDate, changeDropOffDate, changePickUpTime, changeDropOffTime }) => (
-  <div className="container" style={{ float: 'left', 'max-width': '300px' }}>
-    <table style={{ border: '1px solid' }}>
+  <div style={{ float: 'left', 'max-width': '300px' }}>
+    <table class='formTable' style={{ border: '1px solid' }}>
       <tr>Location</tr>
       <tr>
-        <div style={{ 'padding-top': '10px' }}>
-          <Geosuggest placeholder="Enter address" onSuggestSelect={suggest => changePickUpLocation(suggest.label)} />
-        </div>
+        <input placeholder='Enter address or airport' onChange={e => changePickUpLocation(e.target.value)} />
       </tr>
       <tr>Pick up date</tr>
       <tr>
-        <td style={{ 'padding-top': '10px', 'padding-bottom': '10px', 'padding-right': '20px' }}><Calendar placeholder="Select Date" format="MM/DD/YYYY" computableFormat="MM/DD/YYYY" onChange={e => changePickUpDate(e)} /></td>
-        <td><TimeSelect label="" value={initialTime} onChange={e => changePickUpTime(e.toTimeString().slice(0, 5))} /></td>
+        <td style={{ 'padding-top': '10px', 'padding-bottom': '10px', 'padding-right': '20px' }}>
+          <input placeholder="MM/DD/YYYY" onChange={e => changePickUpDate(e.target.value)} />
+        </td>
+        <td>
+          <TimeSelect label="" value={initialTime} onChange={e => changePickUpTime(e.toTimeString().slice(0, 5))} />
+        </td>
       </tr>
       <tr>Drop off date</tr>
       <tr>
-        <td style={{ 'padding-top': '10px', 'padding-bottom': '10px' }}><Calendar placeholder="Select Date" format="MM/DD/YYYY" computableFormat="MM/DD/YYYY" onChange={e => changeDropOffDate(e)} /></td>
-        <td><TimeSelect label="" value={initialTime} onChange={e => changeDropOffTime(e.toTimeString().slice(0, 5))} /></td>
+        <td style={{ 'padding-top': '10px', 'padding-bottom': '10px' }}>
+          <input placeholder="MM/DD/YYYY" onChange={e => changeDropOffDate(e.target.value)} />
+        </td>
+        <td>
+          <TimeSelect label="" value={initialTime} onChange={e => changeDropOffTime(e.toTimeString().slice(0, 5))} />
+        </td>
       </tr>
       <tr>
         <div style={{ 'margin-left': '65px', 'padding-top': '10px' }}>
