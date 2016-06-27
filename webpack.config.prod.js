@@ -62,6 +62,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production'),
+        'API_KEY': JSON.stringify('pt9hmnp4ngx64vaqtck2hxn3'),
       }
     }),
     new webpack.optimize.CommonsChunkPlugin({

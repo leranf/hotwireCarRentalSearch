@@ -68,6 +68,7 @@ module.exports = {
       'process.env': {
         CLIENT: JSON.stringify(true),
         'NODE_ENV': JSON.stringify('development'),
+        'API_KEY': JSON.stringify('pt9hmnp4ngx64vaqtck2hxn3'),
       }
     }),
   ],
