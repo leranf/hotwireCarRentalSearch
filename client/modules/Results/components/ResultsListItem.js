@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import styles from './ResultsListItem';
 
 const mapStateToProps = state => ({
   carTypes: state.results.carTypes,
@@ -8,7 +7,7 @@ const mapStateToProps = state => ({
 
 const ResultsListItem = ({ carTypes, CarTypeCode, DailyRate, TotalPrice, MileageDescription }) => (
   <div style={{ padding: '10px' }}>
-    <table className={styles.resultsListItem} style={{ border: '1px solid', width: '500px' }}>
+    <table style={{ border: '1px solid', width: '500px' }}>
       <tr>
         <td style={{ float: 'left', 'font-weight': 'bold', 'font-size': 'larger' }}>{carTypes[CarTypeCode].CarTypeName}</td>
         <td style={{ float: 'right', 'font-weight': 'bold', 'font-size': 'larger', color: 'red' }}>${DailyRate.split('.')[0]}</td>
