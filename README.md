@@ -43,7 +43,7 @@ The API request is handled on the server side to avoid making cross-origin reque
 ## Misc
 
 I ran into some complications due to the fact that I used a boilerplate to architect the skeleton of the application.
-  - I wanted to use react-geosuggest and react-input-calendar in my Form componen,t but the styling was not being applied correctly. This would have made for a much more intuitive user experience.
+  - I wanted to use react-geosuggest and react-input-calendar in my Form component, but the styling was not being applied correctly. This would have made for a much more intuitive user experience.
   - I was not able to deploy the app successfully. 
 
 ## License
