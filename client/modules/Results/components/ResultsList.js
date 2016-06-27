@@ -6,7 +6,7 @@ const searchStyles = {
   position: 'relative',
   right: '100px',
   top: '200px',
-  'font-size':'40px', 
+  'font-size': '40px',
 };
 
 const mapStateToProps = state => ({
@@ -19,7 +19,7 @@ const ResultsList = ({ isFetching, carResults, badRequest }) => (
   <div style={{ float: 'right' }}>
     {isFetching ? <div style={searchStyles}>Searching for cars...</div> :
       badRequest ? <div style={searchStyles}>Something went wrong...</div> :
-      carResults.map(carResult => <ResultsListItem key={carResult.ResultId} {...carResult} />)
+        carResults.map(carResult => <ResultsListItem key={carResult.ResultId} {...carResult} />)
     }
   </div>
 );

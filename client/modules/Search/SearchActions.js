@@ -39,7 +39,7 @@ export const searchForCars = (location, date, time) =>
     .then(res => {
       dispatch(setCarResults(res));
     })
-    .catch(err => {
+    .catch(() => {
       dispatch(errorGettingCarResults());
     });
   };

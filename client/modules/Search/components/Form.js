@@ -19,10 +19,10 @@ const mapDispatchToProps = dispatch => ({
 
 const Form = ({ changePickUpLocation, changePickUpDate, changeDropOffDate, changePickUpTime, changeDropOffTime }) => (
   <div style={{ float: 'left', 'max-width': '300px' }}>
-    <table class='formTable' style={{ border: '1px solid' }}>
+    <table style={{ border: '1px solid' }}>
       <tr>Location</tr>
       <tr>
-        <input placeholder='Enter address or airport' onChange={e => changePickUpLocation(e.target.value)} />
+        <input placeholder="Enter address or airport" onChange={e => changePickUpLocation(e.target.value)} />
       </tr>
       <tr>Pick up date</tr>
       <tr>

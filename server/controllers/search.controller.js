@@ -21,7 +21,7 @@ export function carSearch(req, res) {
       const carResults = jsonResults.Hotwire.Result.CarResult;
       res.json({ carTypes, carResults });
     })
-    .catch(err => {
+    .catch(() => {
       res.status(400).send('Something broke!');
     });
 }

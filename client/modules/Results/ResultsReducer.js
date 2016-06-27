@@ -12,7 +12,7 @@ const ResultsReducer = (state = initialState, action) => {
         isFetching: true,
       });
     case 'SET_CAR_RESULTS':
-      let carTypesObj = {};
+      const carTypesObj = {};
       action.payload.carTypes.forEach(type => {
         carTypesObj[type.CarTypeCode] = type;
       });

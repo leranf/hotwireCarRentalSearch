@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Header.css';
 
-export function Header(props) {
+export function Header() {
   return (
     <div className={styles.header}>
       <div className={styles.content}>
